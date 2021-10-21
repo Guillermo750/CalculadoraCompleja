@@ -6,33 +6,34 @@ import javafx.beans.property.SimpleDoubleProperty;
 public class Complejo {
 	
 	private DoubleProperty real = new SimpleDoubleProperty();
-	
-	private DoubleProperty imaginario = new SimpleDoubleProperty();
+    private DoubleProperty imaginario = new SimpleDoubleProperty();
+    
+    @Override
+    public String toString() {
 
-//	public Complejo() {
-//	}
+        return "(" + getReal() + ", " + getImaginario() + ")";
+    }
 
-	public final DoubleProperty imaginarioProperty() {
-		return this.imaginario;
-	}
+    public DoubleProperty realProperty(){
+        return this.real;
+    }
+    public double getReal(){
+        return this.realProperty().get();
+    }
 
-	public final double getImaginario() {
-		return this.imaginarioProperty().get();
-	}
+    public void setReal(final double real) {
+        this.realProperty().set(real);
+    }
 
-	public final void setImaginario(final double imaginario) {
-		this.imaginarioProperty().set(imaginario);
-	}
+    public DoubleProperty imaginarioProperty(){
+        return this.imaginario;
+    }
 
-	public final DoubleProperty realProperty() {
-		return this.real;
-	}
+    public double getImaginario(){
+        return this.imaginarioProperty().get();
+    }
 
-	public final double getReal() {
-		return this.realProperty().get();
-	}
-
-	public final void setReal(final double real) {
-		this.realProperty().set(real);
-	}
+    public void setImaginario(final double imaginario){
+        this.imaginarioProperty().set(imaginario);
+    }
 }
